@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+    <link id="favicon" rel="icon" href="" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dev html V14</title>
@@ -124,6 +125,11 @@
         els.btn.addEventListener('click', decrypt);
         els.pwd.addEventListener('keypress', (e) => { if (e.key === 'Enter') decrypt(); });
         window.onload = () => els.pwd.focus();
+            const canvas = document.createElement('canvas');
+    canvas.width = canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, 64, 64);
+    document.getElementById('favicon').href = canvas.toDataURL();
     </script>
 </body>
 </html>
